@@ -28,13 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.SaveButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // SaveButton
+            // 
+            this.SaveButton.Location = new System.Drawing.Point(540, 465);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(75, 23);
+            this.SaveButton.TabIndex = 0;
+            this.SaveButton.Text = "Save";
+            this.SaveButton.UseVisualStyleBackColor = true;
             // 
             // NewEditNoteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(806, 529);
+            this.Controls.Add(this.SaveButton);
             this.Name = "NewEditNoteForm";
             this.Text = "NewEditNoteForm";
             this.ResumeLayout(false);
@@ -42,5 +53,7 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Button SaveButton;
     }
 }
