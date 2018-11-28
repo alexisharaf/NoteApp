@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.MainMenuStrip = new System.Windows.Forms.MenuStrip();
             this.fielToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadNotesFromDiskToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToDiskToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,8 +50,9 @@
             this.modifiactionDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.noteTextTextBox = new System.Windows.Forms.TextBox();
             this.noteCategoryLabel = new System.Windows.Forms.Label();
-            this.saveToDiskToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.noteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.MainMenuStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.noteBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // MainMenuStrip
@@ -87,6 +90,13 @@
             this.loadNotesFromDiskToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.loadNotesFromDiskToolStripMenuItem.Text = "LoadNotesFromDisk";
             this.loadNotesFromDiskToolStripMenuItem.Click += new System.EventHandler(this.loadNotesFromDiskToolStripMenuItem_Click);
+            // 
+            // saveToDiskToolStripMenuItem
+            // 
+            this.saveToDiskToolStripMenuItem.Name = "saveToDiskToolStripMenuItem";
+            this.saveToDiskToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.saveToDiskToolStripMenuItem.Text = "SaveToDisk";
+            this.saveToDiskToolStripMenuItem.Click += new System.EventHandler(this.saveToDiskToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -217,12 +227,9 @@
             this.noteCategoryLabel.TabIndex = 10;
             this.noteCategoryLabel.Text = "Категория";
             // 
-            // saveToDiskToolStripMenuItem
+            // noteBindingSource
             // 
-            this.saveToDiskToolStripMenuItem.Name = "saveToDiskToolStripMenuItem";
-            this.saveToDiskToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
-            this.saveToDiskToolStripMenuItem.Text = "SaveToDisk";
-            this.saveToDiskToolStripMenuItem.Click += new System.EventHandler(this.saveToDiskToolStripMenuItem_Click);
+            this.noteBindingSource.DataSource = typeof(Note.Note);
             // 
             // MainForm
             // 
@@ -244,6 +251,7 @@
             this.Text = "Главное окно";
             this.MainMenuStrip.ResumeLayout(false);
             this.MainMenuStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.noteBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -272,6 +280,7 @@
         private System.Windows.Forms.Label noteCategoryLabel;
         private System.Windows.Forms.ToolStripMenuItem loadNotesFromDiskToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveToDiskToolStripMenuItem;
+        private System.Windows.Forms.BindingSource noteBindingSource;
     }
 }
 

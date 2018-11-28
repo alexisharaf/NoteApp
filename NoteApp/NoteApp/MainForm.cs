@@ -40,7 +40,13 @@ namespace NoteApp
         private void addToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NewEditNoteForm newNoteForm = new NewEditNoteForm();
-            newNoteForm.ShowDialog();
+            if(newNoteForm.ShowDialog() == DialogResult.OK)
+            {
+                noteList.Add(newNoteForm.note);
+
+
+                noteListTextBox.AppendText("jfksdlf;");
+            }
         }
 
         private void SelectCategoryComboBox1_SelectedIndexChanged(object sender, EventArgs e)

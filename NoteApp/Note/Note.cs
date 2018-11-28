@@ -25,6 +25,70 @@ namespace Note
         private DateTime creationDate;
         private DateTime editDate;
         private string text;
-        
+
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+
+            set
+            {
+                name = value;
+            }
+        }
+
+        public string Category
+        {
+            get
+            {
+                return category;
+            }
+
+            set
+            {
+                category = value;
+            }
+        }
+
+        public DateTime CreationDate
+        {
+            get
+            {
+                return creationDate;
+            }
+
+            set
+            {
+                creationDate = value;
+            }
+        }
+
+        public DateTime EditDate
+        {
+            get
+            {
+                return editDate;
+            }
+
+            set
+            {
+                editDate = value;
+            }
+        }
+
+        public string Text
+        {
+            get
+            {
+                return text;
+            }
+
+            set
+            {
+                text = value;
+            }
+        }
     }
 }
