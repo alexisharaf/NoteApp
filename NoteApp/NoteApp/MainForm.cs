@@ -13,9 +13,10 @@ namespace NoteApp
 {
     public partial class MainForm : Form
     {
+        
 
         List<Note.Note> noteList = new List<Note.Note>();
-         
+        Note.Note currentNote = new Note.Note(); 
 
         public MainForm()
         {
@@ -42,10 +43,13 @@ namespace NoteApp
             NewEditNoteForm newNoteForm = new NewEditNoteForm();
             if(newNoteForm.ShowDialog() == DialogResult.OK)
             {
-                noteList.Add(newNoteForm.note);
+
+                currentNote = newNoteForm.note;
+
+                noteList.Add(currentNote);
 
 
-                noteListTextBox.AppendText(newNoteForm.note.Name);
+                noteListTextBox.AppendText(currentNote.Name);
             }
         }
 
@@ -63,6 +67,11 @@ namespace NoteApp
         private void saveToDiskToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //сделать запись на диск. пишем noteList
+        }
+
+        private void removeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            noteList.Remove(currentNote);
         }
     }
 }
