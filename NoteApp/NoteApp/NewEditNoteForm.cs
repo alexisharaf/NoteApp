@@ -36,5 +36,14 @@ namespace NoteApp
             creationDateTimePicker.Value = note.CreationDate;
             modifiactionDateTimePicker.Value = note.EditDate;
         }
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+             note.Name= noteTitleTextBox.Text;
+            note.Category = categoryComboBox.Text;
+            note.Text = noteTextTextBox.Text;
+            note.CreationDate = creationDateTimePicker.Value;
+            note.EditDate = modifiactionDateTimePicker.Value;
+        }
     }
 }

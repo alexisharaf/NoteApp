@@ -45,7 +45,7 @@ namespace NoteApp
                 noteList.Add(newNoteForm.note);
 
 
-                noteListTextBox.AppendText("jfksdlf;");
+                noteListTextBox.AppendText(newNoteForm.note.Name);
             }
         }
 
