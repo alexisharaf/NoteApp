@@ -32,16 +32,7 @@ namespace NoteApp
             }
 
 
-            currentNote = noteList[0];
             notesListBox.SetSelected(0, true);
-
-            NoteNameLabel.Text = currentNote.Name;
-            creationDateTimePicker.Value = currentNote.CreationDate;
-            modifiactionDateTimePicker.Value = currentNote.EditDate;
-            noteTextTextBox.Text = currentNote.Text;
-
-            SelectCategoryComboBox1.Text = currentNote.Category;
-
 
         }
 
@@ -102,6 +93,19 @@ namespace NoteApp
         {
             noteList.Remove(currentNote);
             LoadListToScreen();
+        }
+
+        private void notesListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            currentNote = noteList[notesListBox.SelectedIndex];
+
+            NoteNameLabel.Text = currentNote.Name;
+            creationDateTimePicker.Value = currentNote.CreationDate;
+            modifiactionDateTimePicker.Value = currentNote.EditDate;
+            noteTextTextBox.Text = currentNote.Text;
+
+            SelectCategoryComboBox1.Text = currentNote.Category;
+
         }
     }
 }

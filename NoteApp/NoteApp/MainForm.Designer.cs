@@ -231,6 +231,7 @@
             this.notesListBox.Name = "notesListBox";
             this.notesListBox.Size = new System.Drawing.Size(258, 485);
             this.notesListBox.TabIndex = 11;
+            this.notesListBox.SelectedIndexChanged += new System.EventHandler(this.notesListBox_SelectedIndexChanged);
             // 
             // MainForm
             // 
