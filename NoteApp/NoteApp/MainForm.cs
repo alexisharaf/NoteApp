@@ -107,5 +107,23 @@ namespace NoteApp
             SelectCategoryComboBox1.Text = currentNote.Category;
 
         }
+
+        private void editToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            NewEditNoteForm newNoteForm = new NewEditNoteForm(currentNote);
+
+            if (newNoteForm.ShowDialog() == DialogResult.OK)
+            {
+
+                currentNote = newNoteForm.note;
+
+                noteList.Add(currentNote);
+
+            }
+
+            LoadListToScreen();
+
+
+        }
     }
 }
