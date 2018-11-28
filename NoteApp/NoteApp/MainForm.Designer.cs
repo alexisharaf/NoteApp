@@ -42,7 +42,6 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SelectCategoryComboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.noteListTextBox = new System.Windows.Forms.TextBox();
             this.NoteNameLabel = new System.Windows.Forms.Label();
             this.creationDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
@@ -51,6 +50,7 @@
             this.noteTextTextBox = new System.Windows.Forms.TextBox();
             this.noteCategoryLabel = new System.Windows.Forms.Label();
             this.noteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.notesListBox = new System.Windows.Forms.ListBox();
             this.MainMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.noteBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -111,14 +111,14 @@
             // addToolStripMenuItem
             // 
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.addToolStripMenuItem.Text = "Add";
             this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem1
             // 
             this.editToolStripMenuItem1.Name = "editToolStripMenuItem1";
-            this.editToolStripMenuItem1.Size = new System.Drawing.Size(117, 22);
+            this.editToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.editToolStripMenuItem1.Text = "Edit";
             // 
             // removeToolStripMenuItem
@@ -160,14 +160,6 @@
             this.label1.Size = new System.Drawing.Size(81, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Select category";
-            // 
-            // noteListTextBox
-            // 
-            this.noteListTextBox.Location = new System.Drawing.Point(38, 87);
-            this.noteListTextBox.Multiline = true;
-            this.noteListTextBox.Name = "noteListTextBox";
-            this.noteListTextBox.Size = new System.Drawing.Size(258, 517);
-            this.noteListTextBox.TabIndex = 3;
             // 
             // NoteNameLabel
             // 
@@ -232,11 +224,20 @@
             // 
             this.noteBindingSource.DataSource = typeof(Note.Note);
             // 
+            // notesListBox
+            // 
+            this.notesListBox.FormattingEnabled = true;
+            this.notesListBox.Location = new System.Drawing.Point(38, 119);
+            this.notesListBox.Name = "notesListBox";
+            this.notesListBox.Size = new System.Drawing.Size(258, 485);
+            this.notesListBox.TabIndex = 11;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(880, 616);
+            this.Controls.Add(this.notesListBox);
             this.Controls.Add(this.noteCategoryLabel);
             this.Controls.Add(this.noteTextTextBox);
             this.Controls.Add(this.modifiactionDateTimePicker);
@@ -244,7 +245,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.creationDateTimePicker);
             this.Controls.Add(this.NoteNameLabel);
-            this.Controls.Add(this.noteListTextBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.SelectCategoryComboBox1);
             this.Controls.Add(this.MainMenuStrip);
@@ -271,7 +271,6 @@
         private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem;
         private System.Windows.Forms.ComboBox SelectCategoryComboBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox noteListTextBox;
         private System.Windows.Forms.Label NoteNameLabel;
         private System.Windows.Forms.DateTimePicker creationDateTimePicker;
         private System.Windows.Forms.Label label2;
@@ -282,6 +281,7 @@
         private System.Windows.Forms.ToolStripMenuItem loadNotesFromDiskToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveToDiskToolStripMenuItem;
         private System.Windows.Forms.BindingSource noteBindingSource;
+        private System.Windows.Forms.ListBox notesListBox;
     }
 }
 

@@ -21,12 +21,15 @@ namespace NoteApp
 
         private void LoadListToScreen()
         {
-            noteListTextBox.Clear();
+            notesListBox.Items.Clear();
+
+            //noteListTextBox.Clear();
 
             for (int i = 0; i < noteList.Count; i++)
             {
 
-                noteListTextBox.AppendText(noteList[i].Name + "\r\n");
+                notesListBox.Items.Add(noteList[i].Name);
+                //noteListTextBox.AppendText(noteList[i].Name + "\r\n");
             }
 
             currentNote = noteList[0];
