@@ -23,16 +23,25 @@ namespace NoteApp
         {
             notesListBox.Items.Clear();
 
-            //noteListTextBox.Clear();
+          
 
             for (int i = 0; i < noteList.Count; i++)
             {
 
                 notesListBox.Items.Add(noteList[i].Name);
-                //noteListTextBox.AppendText(noteList[i].Name + "\r\n");
             }
 
+
             currentNote = noteList[0];
+            notesListBox.SetSelected(0, true);
+
+            NoteNameLabel.Text = currentNote.Name;
+            creationDateTimePicker.Value = currentNote.CreationDate;
+            modifiactionDateTimePicker.Value = currentNote.EditDate;
+            noteTextTextBox.Text = currentNote.Text;
+
+            SelectCategoryComboBox1.Text = currentNote.Category;
+
 
         }
 
@@ -59,15 +68,14 @@ namespace NoteApp
         private void addToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NewEditNoteForm newNoteForm = new NewEditNoteForm();
-            if(newNoteForm.ShowDialog() == DialogResult.OK)
+
+            if (newNoteForm.ShowDialog() == DialogResult.OK)
             {
 
                 currentNote = newNoteForm.note;
 
                 noteList.Add(currentNote);
-
-
-               
+             
             }
 
             LoadListToScreen();
