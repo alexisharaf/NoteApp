@@ -16,7 +16,22 @@ namespace NoteApp
         
 
         List<Note.Note> noteList = new List<Note.Note>();
-        Note.Note currentNote = new Note.Note(); 
+        Note.Note currentNote = new Note.Note();
+
+
+        private void LoadListToScreen()
+        {
+            noteListTextBox.Clear();
+
+            for (int i = 0; i < noteList.Count; i++)
+            {
+
+                noteListTextBox.AppendText(noteList[i].Name + "\r\n");
+            }
+
+            currentNote = noteList[0];
+
+        }
 
         public MainForm()
         {
@@ -49,8 +64,11 @@ namespace NoteApp
                 noteList.Add(currentNote);
 
 
-                noteListTextBox.AppendText(currentNote.Name);
+               
             }
+
+            LoadListToScreen();
+
         }
 
         private void SelectCategoryComboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -72,6 +90,7 @@ namespace NoteApp
         private void removeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             noteList.Remove(currentNote);
+            LoadListToScreen();
         }
     }
 }
