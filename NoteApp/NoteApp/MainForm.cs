@@ -34,7 +34,11 @@ namespace NoteApp
             }
 
 
-            notesListBox.SetSelected(0, true);
+            if (notesListBox.Items.Count != 0)
+            {
+                notesListBox.SetSelected(0, true);
+            }
+
 
         }
 
@@ -92,7 +96,7 @@ namespace NoteApp
 
             {
                 //Вызываем десериализацию и явно преобразуем результат в целевой тип данных
-                noteList = (List<Note.Note>)serializer.Deserialize(reader);
+                noteList =   (List<Note.Note>) serializer.Deserialize(reader);
             }
             
 
