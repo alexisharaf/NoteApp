@@ -91,6 +91,9 @@ namespace NoteApp
             //Создаём экземпляр сериализатора
             JsonSerializer serializer = new JsonSerializer();
             //Открываем поток для чтения из файла с указанием пути
+
+            serializer.DateFormatString = "yyyy'-'MM'-'dd'T'HH':'mm':'ss";
+
             using (StreamReader sr = new StreamReader(@"e:\NoteApp.notes"))
             using (JsonReader reader = new JsonTextReader(sr))
 
@@ -106,6 +109,7 @@ namespace NoteApp
         {
             //Создаём экземпляр сериализатора
             JsonSerializer serializer = new JsonSerializer();
+            serializer.DateFormatString = "yyyy'-'MM'-'dd'T'HH':'mm':'ss";
             //Открываем поток для записи в файл с указанием пути
             using (StreamWriter sw = new StreamWriter(@"e:\NoteApp.notes"))
             using (JsonWriter writer = new JsonTextWriter(sw))
