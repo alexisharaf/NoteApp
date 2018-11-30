@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Note;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace NoteApp
 {
@@ -80,13 +82,33 @@ namespace NoteApp
 
         private void loadNotesFromDiskToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //сделать загрузку заметок с диска. грузим в noteList
+            
+           
+            //Создаём экземпляр сериализатора
+            JsonSerializer serializer = new JsonSerializer();
+            //Открываем поток для чтения из файла с указанием пути
+            using (StreamReader sr = new StreamReader(@"e:\NoteApp.notes"))
+            using (JsonReader reader = new JsonTextReader(sr))
+
+            {
+                //Вызываем десериализацию и явно преобразуем результат в целевой тип данных
+                noteList = (List<Note.Note>)serializer.Deserialize(reader);
+            }
+            
 
         }
 
         private void saveToDiskToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //сделать запись на диск. пишем noteList
+            //Создаём экземпляр сериализатора
+            JsonSerializer serializer = new JsonSerializer();
+            //Открываем поток для записи в файл с указанием пути
+            using (StreamWriter sw = new StreamWriter(@"e:\NoteApp.notes"))
+            using (JsonWriter writer = new JsonTextWriter(sw))
+            {
+                //Вызываем сериализацию и передаем объект, который хотим сериализовать
+                serializer.Serialize(writer, noteList);
+            }
         }
 
         private void removeToolStripMenuItem_Click(object sender, EventArgs e)
