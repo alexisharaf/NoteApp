@@ -223,7 +223,7 @@
             // 
             // noteBindingSource
             // 
-            this.noteBindingSource.DataSource = typeof(Note.Note);
+            this.noteBindingSource.DataSource = typeof(Note);
             // 
             // notesListBox
             // 

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Note;
+//using Note;
 using System.IO;
 using Newtonsoft.Json;
 
@@ -17,8 +17,8 @@ namespace NoteApp
     {
         
 
-        List<Note.Note> noteList = new List<Note.Note>();
-        Note.Note currentNote = new Note.Note();
+        List<Note> noteList = new List<Note>();
+        Note currentNote = new Note();
 
 
         private void LoadListToScreen()
@@ -99,7 +99,7 @@ namespace NoteApp
 
             {
                 //Вызываем десериализацию и явно преобразуем результат в целевой тип данных
-                noteList =   (List<Note.Note>) serializer.Deserialize(reader);
+                noteList =   (List<Note>) serializer.Deserialize(reader);
             }
             
 

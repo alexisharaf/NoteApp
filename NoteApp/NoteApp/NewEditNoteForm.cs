@@ -7,24 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Note;
+//using Note;
 
 namespace NoteApp
 {
     public partial class NewEditNoteForm : Form
     {
 
-        public Note.Note note ;
+        public Note note ;
 
         public NewEditNoteForm()
         {
-            note = new Note.Note();
+            note = new Note();
             InitializeComponent();
         }
 
-        public NewEditNoteForm(Note.Note notein)
+        public NewEditNoteForm(Note notein)
         {
-            note = new Note.Note();
+            note = new Note();
             note = notein;
 
 
